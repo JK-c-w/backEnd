@@ -1,0 +1,43 @@
+
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(8,50px);
+    grid-template-rows: repeat(8,50px);
+    border-radius:10px ;
+
+}
+.square.light{
+   background-color: burlywood;
+}
+.square.Dark{
+    background-color: rgb(153, 91, 9);
+}
+.piece {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+.piece.white{
+    color: white;
+}
+.piece.black{
+    color: black;
+}
+.flipped{
+    transform: rotate(180deg) translate(-100px,-155px);
+}
+
+.piece.drag{
+    cursor: grab;
+}
+.dragging{
+    opacity: 0.5;
+}
+.flipped .piece{
+    transform: rotate(180deg);
+}
+.invalid{
+    background-color: rgba(255, 0, 0, 0.1);
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0; box-sizing: border-box;}
+        html,body{width: 100%;height:100%;background-color: rgb(7, 7, 7);}
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="px-[40px] py-[40px]">
+    <form method="post" action=<%=`/new/${title}` %>>
+        <label class="text-[white]">Old Content</label> <br>                                                                
+        <textarea class=" pointer-events-none resize-none block bg-zinc-900 border-[grey] px-1% text-[white] w-[100%] h-[10%] mt-[2%] p-[1%]" name="olddesc"><%= content %></textarea>
+        <label class="text-[white]">New Content</label> <br>
+        <textarea class="resize-none block bg-zinc-900 border-[grey] px-1% text-[white] w-[100%] h-[10%] mt-[2%]" name="newdesc"></textarea>
+        <button type="submit" class="bg-[green] rounded-[3px]  text-[white] mt-[2%] p-[5px]">ADD THE TASK </button>
+        <button class="bg-[green] rounded-[3px]  text-[white] mt-[2%] p-[5px]"><a href="/">Cancel</a> </button>
+        
+    </form>
+   </div> 
+</body>
+</html>

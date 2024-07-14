@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0; box-sizing: border-box;}
+        html,body{width: 100%;height:100%;background-color: rgb(7, 7, 7);}
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body >
+    <div class="py-[40px] px-[40px]">
+        <form action="/add" method="post" >
+            <input class=" block bg-zinc-900  px-[1%] border-[grey] text-[white] w-[100%]" name="title" type="text" placeholder="write the title">
+            <textarea class="resize-none block bg-zinc-900 border-[grey] px-1% text-[white] w-[100%] h-[10%] mt-[2%]" name="desc"></textarea>
+            <button type="submit" class="bg-[green] rounded-[3px]  text-[white] mt-[2%] p-[5px]">ADD THE TASK </button>
+        </form>
+        <div class="flex gap-[5%] mt-[50px]">
+            <% if(files.length>0){ %>
+                <% files.forEach(function(val){ %>
+                <div class=" bg-zinc-900 minw-[500px] p-[5px] rounded-[10px]">
+                    <h1 class="text-[white]">
+                        <%=val%>
+                    </h1>
+                    <a class=" block text-[blue]" href=<%= `/files/${val}` %> >Read more..</a>
+                    <a class="text-zinc-400" href=<%= `/edit/${val}` %>>Edit</a>
+                </div>
+            <% }) %>
+            <% } else{ %>
+        <h1 class="text-zinc-600"> No task added yet.</h1>
+          <% } %> 
+        </div>
+    </div>
+</body>
+</html>
